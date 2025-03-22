@@ -28,5 +28,17 @@ public class Board {
             }
         }
     }
+
+    public boolean isMoveValid(int row, int col) {
+        return row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == ' ';
+    }
+
+    public void placeMove(int row, int col, char player) {
+        if (isMoveValid(row, col)) {
+            board[row][col] = player;
+        } else {
+            System.out.println("Invalid move! Try again.");
+        }
+    }
     
 }
